@@ -9,14 +9,13 @@ public class BlackJack {
   List<String> dealt = new ArrayList<String>();
   // List<String> randomizedDeck = new ArrayList<String>();
 
-  public List<String> initializeDeck() {
+  public void initializeDeck() {
     for(String suit : suits) {
       for(String value : values) {
         deck.add(value + " of " + suit);
       }
     }
     Collections.shuffle(deck);
-    return deck;
   }
 
   public List<String> drawTwoCards() {
