@@ -28,4 +28,12 @@ public class BlackJackTest {
     testBlackJack.initializeDeck();
     assertEquals(dealt, testBlackJack.drawTwoCards());
   }
+
+  @Test
+  public void drawTwoCards_checkSizeOfArray_ArrayList() {
+    BlackJack testBlackJack = new BlackJack();
+    testBlackJack.initializeDeck();
+    testBlackJack.drawTwoCards();
+    assertEquals(50, testBlackJack.deck.size());
+  }
 }
