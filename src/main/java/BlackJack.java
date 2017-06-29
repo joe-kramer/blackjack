@@ -31,4 +31,20 @@ public class BlackJack {
     deck.remove(0);
     return dealt;
   }
+
+  public int getScore(List<String> dealtCards) {
+    int total = 0;
+    for(String card : dealtCards) {
+      String[] cardArray = card.split(" ");
+      if(cardArray[0].equals("Ace")) {
+        total += 11;
+      } else if (cardArray[0].equals("Jack") || cardArray[0].equals("Queen") || cardArray[0].equals("King")) {
+        total += 10;
+      } else {
+        int value = Integer.parseInt(cardArray[0]);
+        total += value;
+      }
+    }
+    return total;
+  }
 }

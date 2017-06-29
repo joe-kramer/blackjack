@@ -10,7 +10,6 @@ public class App {
     game.initializeDeck();
     List<String> yourDraw = game.drawTwoCards();
     System.out.println("Your first two cards are " + yourDraw.get(0) + ", and " + yourDraw.get(1));
-
-
+    System.out.println("Your current total is: " + game.getScore(yourDraw));
   }
 }
