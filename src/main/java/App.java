@@ -53,19 +53,29 @@ public class App {
               drawLoop = false;
           } else {
             System.out.println("Did not recognize input - Would you like to draw another card? Enter \"Yes\" or \"No\":");
+          }
+        }
+
+        if(game.getScore(yourDraw) > 21) {
+          System.out.println("You lose.");
+        } else {
+          while (game.getScore(dealerDraw) < 17) {
+            dealerDraw = game.dealerDrawOneCard(dealerDraw);
+          }
+          if (game.getScore(dealerDraw) < game.getScore(yourDraw)) {
+            System.out.print("You win!");
+          } else if (game.getScore(dealerDraw) > game.getScore(yourDraw)) {
+            System.out.println("You lose.");
+          } else {
+            System.out.println("You tied. Push.");
+          }
         }
       } else if (userChoice.equals("Exit")) {
         play = false;
       } else {
         System.out.println("Did not recognize input - Enter \"Play\" to deal out another hand, or \"Exit\" to cash out");
       }
-
-      // if (userDidNotLose &) { }
-      // if (game.getScore(dealerDraw) < 17) {
-      //   System.out.println(dealerDraw);
-      //   System.out.println(game.deck.size());
-      // }
-    }
-    System.out.println("Thank you for playing!");
+      System.out.println("Thank you for playing!");
+    }  
   }
 }

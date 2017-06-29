@@ -64,9 +64,9 @@ public class BlackJack {
       for(String card : dealtCards) {
         String[] cardArray = card.split(" ");
         if(cardArray[0].equals("Ace")) {
-          do {
+          if (total > 21) {
             total -= 10;
-          }while(total > 21)
+          }
         }
       }
     }
