@@ -19,10 +19,11 @@ public class BlackJack {
   }
 
   public List<String> drawTwoCards() {
+    dealt.clear();
     dealt.add(deck.get(0));
     dealt.add(deck.get(1));
     deck.remove(0);
-    deck.remove(1);
+    deck.remove(0);
     return dealt;
   }
 
@@ -45,6 +46,11 @@ public class BlackJack {
         total += value;
       }
     }
+    // if (total > 21) {
+    //   if(cardArray[0].equals("Ace")) {
+    //     total -= 10;
+    //   }
+    // }
     return total;
   }
 }
